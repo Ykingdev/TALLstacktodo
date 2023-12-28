@@ -8,7 +8,7 @@
             </a>
 
         </div>
-        <div class="bg-white sm:rounded-lg h-[70vh] overflow-scroll gap-2">
+        <div class="bg-white sm:rounded-lg h-[70vh] w-[20vw] overflow-scroll gap-2">
             @foreach($notes as $note)
                 <div draggable="true" @dragstart="draggingNoteId = '{{ $note->id }}'" @dragend="$wire.call('moveNote', draggingNoteId, droppedStatus)" class="bg-white hover:scale-105 duration-150 hover:duration-150 border-gray-50 shadow-sm rounded-md p-6 mb-4 border-2">
                     <div class="flex flex-row justify-between">
@@ -32,7 +32,7 @@
     {{-- In Progress Column --}}
     <div class="bg-white h-full overflow-scroll gap-2 px-8 border-x-2 border-gray-200 py-4" @drop.prevent="droppedStatus = 'InProgress'" @dragover.prevent>
         <h1 class="text-2xl mb-4 font-bold text-gray-900 ml-3 ">In progress...</h1>
-        <div class="bg-white sm:rounded-lg h-[70vh] overflow-scroll gap-2">
+        <div class="bg-white sm:rounded-lg h-[70vh] w-[20vw] overflow-scroll gap-2">
             @foreach($inProgressNotes as $inProgressNote)
                 <div draggable="true" @dragstart="draggingNoteId = '{{ $inProgressNote->id }}'" @dragend="$wire.call('moveNote', draggingNoteId, droppedStatus)" class="bg-white hover:scale-105 duration-150 hover:duration-150 border-gray-50 shadow-sm rounded-md p-6 mb-4 border-2">
                     <div class="flex flex-row justify-between">
@@ -57,7 +57,7 @@
     {{-- Complete Column --}}
     <div class="max-w-7xl sm:px-6 lg:px-8 py-4" @drop.prevent="droppedStatus = 'Finished'" @dragover.prevent>
         <h1 class="text-2xl ml-3 mb-4 font-bold text-gray-900">Complete</h1>
-        <div class="bg-white sm:rounded-lg h-[70vh] overflow-scroll gap-2">
+        <div class="bg-white sm:rounded-lg h-[70vh] w-[20vw] overflow-scroll gap-2">
             @foreach($CompletedNotes as $CompletedNote)
                 <div draggable="true" @dragstart="draggingNoteId = '{{ $CompletedNote->id }}'" @dragend="$wire.call('moveNote', draggingNoteId, droppedStatus)" class="bg-white hover:scale-105 duration-150 hover:duration-150 border-gray-50 shadow-sm rounded-md p-6 mb-4 border-2">
                     <div class="flex flex-row justify-between">
