@@ -1,5 +1,5 @@
-<div class="max-w-md mx-auto my-10 bg-white p-8 rounded-lg shadow-lg">
-    <form wire:submit.prevent="create">
+<div class="max-w-md mx-auto  my-10 bg-white p-8 rounded-lg shadow-lg">
+    <form wire:submit.prevent="create" class="w-[20vw]  overflow-scroll gap-2" action="#" method="POST">
         <div class="space-y-4">
 
             <div>
